@@ -26,7 +26,7 @@ function createCharacter() {
     charElement.classList.add('hacking-char');
 
     // Caractères aléatoires (lettres, chiffres, ou symboles)
-    const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789#@$%&*";
+    const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789#@$%&*OCEANE<3";
     const randomChar = characters.charAt(Math.floor(Math.random() * characters.length));
     charElement.textContent = randomChar;
 
@@ -45,7 +45,6 @@ function createCharacter() {
 // Générer des caractères en boucle
 setInterval(createCharacter, 100);
 
-
 document.addEventListener('DOMContentLoaded', () => {
     const elements = document.querySelectorAll('.fade-in');
 
@@ -56,3 +55,34 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+document.addEventListener('DOMContentLoaded', () => {
+    const competences = [
+        { name: 'HTML', level: 90 },
+        { name: 'CSS', level: 80 },
+        { name: 'JavaScript', level: 70 },
+        { name: 'Python', level: 60 },
+    ];
+
+    const competencesContainer = document.querySelector('.competences');
+    competences.forEach(comp => {
+        const competenceDiv = document.createElement('div');
+        competenceDiv.classList.add('competence');
+        
+        const name = document.createElement('p');
+        name.classList.add('competence-name');
+        name.textContent = comp.name;
+        
+        const progressBarContainer = document.createElement('div');
+        progressBarContainer.classList.add('progress-bar-container');
+        
+        const progressBar = document.createElement('div');
+        progressBar.classList.add('progress-bar');
+        progressBar.style.width = comp.level + '%';
+
+        progressBarContainer.appendChild(progressBar);
+        competenceDiv.appendChild(name);
+        competenceDiv.appendChild(progressBarContainer);
+
+        competencesContainer.appendChild(competenceDiv);
+    });
+});

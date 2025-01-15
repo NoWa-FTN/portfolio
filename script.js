@@ -20,29 +20,38 @@ document.addEventListener('DOMContentLoaded', () => {
 
 const background = document.getElementById('background');
 
-// Fonction pour générer des cercles
-function createCircle() {
-    const circle = document.createElement('div');
-    circle.classList.add('circle');
+// Fonction pour générer des caractères aléatoires
+function createCharacter() {
+    const charElement = document.createElement('div');
+    charElement.classList.add('hacking-char');
 
-    // Taille et position aléatoires
-    const size = Math.random() * 100 + 50; // Entre 50px et 150px
-    circle.style.width = `${size}px`;
-    circle.style.height = `${size}px`;
-    circle.style.left = `${Math.random() * window.innerWidth}px`;
-    circle.style.top = `${Math.random() * window.innerHeight}px`;
+    // Caractères aléatoires (lettres, chiffres, ou symboles)
+    const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789#@$%&*";
+    const randomChar = characters.charAt(Math.floor(Math.random() * characters.length));
+    charElement.textContent = randomChar;
 
-    // Durée et délai aléatoires
-    circle.style.animationDuration = `${Math.random() * 5 + 5}s`;
-    circle.style.animationDelay = `${Math.random() * 3}s`;
+    // Position aléatoire horizontale
+    charElement.style.left = `${Math.random() * window.innerWidth}px`;
 
-    background.appendChild(circle);
+    // Ajout de l'élément au conteneur de fond
+    background.appendChild(charElement);
 
-    // Supprime le cercle après l'animation
+    // Supprime le caractère après l'animation
     setTimeout(() => {
-        circle.remove();
-    }, 10000);
+        charElement.remove();
+    }, 4000);
 }
 
-// Crée des cercles en boucle
-setInterval(createCircle, 500);
+// Générer des caractères en boucle
+setInterval(createCharacter, 100);
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const elements = document.querySelectorAll('.fade-in');
+
+    elements.forEach((element, index) => {
+        setTimeout(() => {
+            element.classList.add('visible');
+        }, index * 175);
+    });
+});

@@ -55,8 +55,8 @@ body {
 }
 
 .sidebar-image img {
-    max-width: 65%; /* Limite la largeur de l'image */
-    height: 100%; /* Conserve les proportions */
+    width: 65%; /* Limite la largeur de l'image */
+    height: auto; /* Conserve les proportions */
     border-radius: 10px; /* Coins légèrement arrondis */
     transition: transform 0.6s ease, box-shadow 0.3s ease; /* Ajoute un effet au survol */
 }
@@ -373,20 +373,6 @@ body {
     }
 }
 
-@media (max-width: 768px) {
-    .sidebar {
-        width: 50%; /* Réduit la largeur */
-    }
-
-    .main-container {
-        margin-left: 50%;
-    }
-
-    .main-container.full-width {
-        margin-left: 0;
-    }
-}
-
 .fade-in {
     opacity: 0; /* Invisible au départ */
     transform: translateY(20px); /* Déplacement léger vers le bas */
@@ -396,4 +382,145 @@ body {
 .fade-in.visible {
     opacity: 1; /* Devient visible */
     transform: translateY(0); /* Revient à sa position d'origine */
+}
+
+/* Styles pour la gestion de la visibilité du main-container */
+@media (max-width: 768px) {
+    /* Styles pour la sidebar en mode plein écran */
+    .sidebar {
+        width: 100%;
+        height: 100vh;
+        z-index: 9999;
+        position: fixed;
+        top: 0;
+        left: 0;
+        display: block; /* Assurez-vous que la sidebar est bien visible */
+    }
+
+    /* Masquer le main-container lorsque la sidebar est active */
+    .sidebar.fullscreen ~ .main-container {
+        display: none; /* Masque le main-container si la sidebar est en mode fullscreen */
+    }
+
+    /* Rendre le main-container visible lorsque la sidebar n'est pas active */
+    .sidebar:not(.fullscreen) ~ .main-container {
+        display: block; /* Affiche le main-container lorsque la sidebar est fermée */
+    }
+
+    .sidebar-text {
+        font-size: 20px; /* Réduit la taille de la police */
+        margin-top: 20px; /* Moins d'espace en haut */
+    }
+
+    .sidebar ul {
+        margin-top: 20px; /* Moins d'espace entre les éléments */
+        text-align: center;
+    }
+
+    .sidebar li {
+        margin: 5px 0; /* Moins d'espacement entre les éléments */
+    }
+
+    .sidebar a {
+        font-size: 16px; /* Taille plus petite pour les liens */
+        padding: 6px 10px; /* Réduction du padding */
+    }
+
+    .sidebar-image img {
+        width: 50%; /* Image plus petite */
+        margin-top: 10px; /* Moins d'espace en haut */
+    }
+
+    /* Styles pour le bouton de bascule (hamburger) */
+    .toggle-button {
+        font-size: 25px; /* Augmenter la taille de la police pour les petits écrans */
+        padding: 12px 20px; /* Augmenter légèrement l'espacement interne */
+        left: 20px; /* Placer un peu plus à gauche si nécessaire */
+        bottom: 20px; /* Placer un peu plus bas si nécessaire */
+        background-color: #00cc00; /* Fond vert lors de l'état normal */
+        z-index: 9999; /* Assurer une priorité haute sur les autres éléments */
+    }
+
+    .toggle-button:hover {
+        background-color: #00b300; /* Changer la couleur au survol */
+    }
+
+    /* Styles pour le conteneur principal */
+    .main-container {
+        margin-left: 0; /* Réinitialise le margin-left sur mobile */
+        padding: 15px; /* Réduit le padding */
+        display: block; /* Assure que le main-container soit visible */
+    }
+
+    .main-container.full-width {
+        margin-left: 0; /* Si la sidebar est masquée */
+    }
+
+    /* Conteneur `.container-index` */
+    .container-index {
+        margin-left: 5%; /* Centré avec moins de marge */
+        margin-top: 10%; /* Moins d'espace au-dessus */
+        max-width: 90%; /* Largeur quasi-pleine */
+        font-size: 16px; /* Texte plus petit */
+        padding: 15px; /* Réduction du padding */
+    }
+
+    .container-index h2 {
+        font-size: 24px; /* Réduction de la taille des titres */
+    }
+
+    /* Styles pour le bouton */
+    .button-knowmore {
+        font-size: 16px; /* Texte plus petit */
+        padding: 10px 20px; /* Moins de padding */
+    }
+}
+
+/* Pour très petits écrans (moins de 480px) */
+@media (max-width: 480px) {
+    .sidebar {
+        width: 100%; /* Réduction supplémentaire de la barre latérale */
+        padding: 5px 0; /* Padding minimal */
+    }
+
+    .sidebar-text {
+        font-size: 18px; /* Encore plus petit */
+    }
+
+    .sidebar a {
+        font-size: 14px; /* Taille des liens adaptée */
+    }
+
+    .sidebar-image img {
+        width: 40%; /* Image encore plus petite */
+    }
+
+    .toggle-button {
+        font-size: 14px; /* Bouton plus petit */
+        padding: 5px 8px; /* Padding minimal */
+    }
+
+    .main-container {
+        margin-left: 70%; /* Ajustement en conséquence */
+    }
+
+    .main-container.full-width {
+        margin-left: 0;
+    }
+
+    .container-index {
+        margin-left: 2%; /* Centré avec une marge minimale */
+        max-width: 96%; /* Quasiment plein écran */
+        font-size: 14px; /* Texte plus petit */
+        padding: 10px; /* Padding réduit */
+    }
+
+    .container-index h2 {
+        font-size: 20px; /* Taille des titres plus petite */
+    }
+
+    .button-knowmore {
+        font-size: 14px;
+        padding: 8px 15px;
+    }
 }

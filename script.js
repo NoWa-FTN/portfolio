@@ -55,3 +55,4 @@ document.addEventListener('DOMContentLoaded', () => {
         }, index * 175);
     });
 });
+

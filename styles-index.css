@@ -181,6 +181,8 @@ body {
     font-size: 20px;
     cursor: pointer;
     z-index: 1000; /* Pour qu'il reste au-dessus */
+    transform: translate3d(0, 0, 0); /* Active le GPU rendering pour Safari, parfois utile */
+
 }
 
 .toggle-button:hover {
@@ -439,6 +441,7 @@ body {
         bottom: 20px; /* Placer un peu plus bas si nécessaire */
         background-color: #00cc00; /* Fond vert lors de l'état normal */
         z-index: 9999; /* Assurer une priorité haute sur les autres éléments */
+        transform: translate3d(0, 0, 0); /* Active le GPU rendering pour Safari, parfois utile */
     }
 
     .toggle-button:hover {

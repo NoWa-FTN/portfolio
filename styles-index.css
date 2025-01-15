@@ -58,7 +58,11 @@ body {
     max-width: 65%; /* Limite la largeur de l'image */
     height: 100%; /* Conserve les proportions */
     border-radius: 10px; /* Coins légèrement arrondis */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Ajoute un effet au survol */
+    transition: transform 0.6s ease, box-shadow 0.3s ease; /* Ajoute un effet au survol */
+}
+
+.sidebar-image img:hover {
+    transform: scale(1.03); /* Agrandit légèrement l'image au survol */ /* Augmente l'ombre au survol */
 }
 
 .sidebar a {

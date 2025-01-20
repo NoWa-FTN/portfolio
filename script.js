@@ -56,12 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
-    const competences = [
-        { name: 'HTML', level: 90 },
-        { name: 'CSS', level: 80 },
-        { name: 'JavaScript', level: 70 },
-        { name: 'Python', level: 60 },
-    ];
+    const competences = [];
 
     const competencesContainer = document.querySelector('.competences');
     competences.forEach(comp => {

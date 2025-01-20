@@ -56,7 +56,6 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
-    const competences = [];
 
     const competencesContainer = document.querySelector('.competences');
     competences.forEach(comp => {

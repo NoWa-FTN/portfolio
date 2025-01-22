@@ -544,8 +544,81 @@ h2 {
     animation: glitch-animation2 1.5s infinite;
 }
 
+.hr-loisir {
+    background-color: #000; /* Couleur de fond de la ligne */
+    color: #000; /* Couleur du texte s'il y en a, bien que non utilisé pour <hr> */
+    border: none; /* Supprime les bordures par défaut */
+    height: 2px; /* Épaisseur de la ligne */
+    margin: 20px 0; /* Espacement vertical autour de la ligne */
+    border-radius: 2px; /* Arrondit les bords */
+    box-shadow: 0 0 5px #00ff00, 0 0 15px #00ff00; /* Effet de lueur */
+    animation: hr-glow 2s infinite alternate; /* Animation de lueur */
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #00ff00;
+    border-radius: 5px;
+    background: #1a1a1a;
+    color: #00ff00;
+}
+
+textarea {
+    resize: none;
+    height: 100px; 
+}
+
+.button-form {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background: #00ff00;
+    color: #000;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.button-form:hover {
+    background: #00cc00;
+}
+
+#statusMessage {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+/* Animation pour l'effet de glow pulsant */
+@keyframes hr-glow {
+    0% {
+        box-shadow: 0 0 5px #00ff00, 0 0 15px #00ff00;
+    }
+    100% {
+        box-shadow: 0 0 10px #00ff00, 0 0 30px #00ff00;
+    }
+}
+
+
 /* Styles pour la gestion de la visibilité du main-container */
 @media (max-width: 768px) {
+
+    .hr-loisir {
+        height: 1px; /* Réduit l'épaisseur pour un look minimaliste */
+        margin: 15px auto; /* Réduit l'espacement vertical */
+        box-shadow: 0 0 3px #00ff00, 0 0 10px #00ff00; /* Réduit l'intensité de la lueur */
+    }
+
     /* Styles pour la sidebar en mode plein écran */
     .sidebar {
         width: 100%;

@@ -80,3 +80,31 @@ document.addEventListener('DOMContentLoaded', () => {
         competencesContainer.appendChild(competenceDiv);
     });
 });
+
+// Initialiser EmailJS
+emailjs.init("pO5duUsyxKBQfjnv8"); // Remplacez par votre User ID EmailJS
+
+document.getElementById("contactForm").addEventListener("submit", function (event) {
+    event.preventDefault(); // Empêche le rechargement de la page
+
+    const statusMessage = document.getElementById("statusMessage");
+    statusMessage.textContent = "Envoi en cours...";
+
+    // Récupérer les données du formulaire
+    const formData = {
+        name: document.getElementById("name").value,
+        email: document.getElementById("email").value,
+        message: document.getElementById("message").value,
+    };
+
+    // Envoyer via EmailJS
+    emailjs.send("service_61bwung", "template_9ui0mf4", formData)
+        .then(() => {
+            statusMessage.textContent = "Message envoyé avec succès !";
+            document.getElementById("contactForm").reset();
+        })
+        .catch((error) => {
+            console.error("Erreur :", error);
+            statusMessage.textContent = "Une erreur s'est produite. Veuillez réessayer.";
+        });
+});

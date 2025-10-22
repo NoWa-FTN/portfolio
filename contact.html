@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.fixed.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bitcount+Grid+Single:wght@100..900&display=swap" rel="stylesheet">
+    <title>NoWa | Contact</title>
+</head>
+<body>
+    <canvas id="bg-canvas" aria-hidden="true"></canvas>
+    <script src="js/scripts.js"></script>
+
+    <header>
+        <nav>
+            <ul class="nav-links">
+                <div class="div-chainte">
+                    <li class="li-chiant">NoWa | PortFolio</li>
+                </div>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="about.html">À propos</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- HERO -->
+        <section class="hero">
+            <h1 class="glitch" data-text="Entrons en contact_">Entrons en contact_</h1>
+            <p id="hero-subtitle"></p>
+        </section>
+
+        <!-- SECTION CONTACT -->
+        <section class="contact-section">
+          <h2>Me Contacter</h2>
+          <p class="contact-subtitle">Une question, un projet, une collaboration ? Envoie-moi un message ci-dessous.</p>
+        
+          <form id="contactForm" action="https://formspree.io/f/mgvnjadz" method="POST" class="contact-form">
+            <div class="form-group">
+              <label for="name">Nom</label>
+              <input type="text" id="name" name="name" placeholder="John Doe" required>
+            </div>
+        
+            <div class="form-group">
+              <label for="email">Adresse email</label>
+              <input type="email" id="email" name="email" placeholder="example@mail.com" required>
+            </div>
+        
+            <div class="form-group">
+              <label for="subject">Sujet</label>
+              <input type="text" id="subject" name="subject" placeholder="Objet de ton message" required>
+            </div>
+        
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="6" placeholder="Écris ton message ici..." required></textarea>
+            </div>
+        
+            <button type="submit" class="btn-cta">Envoyer</button>
+          </form>
+      
+          <div id="formStatus" class="form-status"></div>
+        </section>
+
+            <div class="contact-links">
+                <h3>Autres moyens de contact</h3>
+                <ul>
+                    <li><strong>Email :</strong> <a href="mailto:noafontaine.pro@gmail.com">noafontaine.pro@gmail.com</a></li>
+                    <li><strong>GitHub :</strong> <a href="https://github.com/NoWa-FTN" target="_blank">@NoWa-FTN</a></li>
+                    <li><strong>LinkedIn :</strong> <a href="https://www.linkedin.com/in/noa-ftn/" target="_blank">linkedin/in/noa-ftn/</a></li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Noa Fontaine. Tous droits réservés.</p>
+    </footer>
+
+    <script>
+        // Typing effect for hero subtitle
+        const text = "Contactez-moi — je vous répondrai rapidement.";
+        let i = 0;
+        const speed = 60;
+        const subtitle = document.getElementById("hero-subtitle");
+
+        function typeEffect() {
+            if (i < text.length) {
+                subtitle.innerHTML += text.charAt(i);
+                i++;
+                setTimeout(typeEffect, speed);
+            }
+        }
+        document.addEventListener("DOMContentLoaded", typeEffect);
+    </script>
+
+    <script>
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById("contactForm");
+  const status = document.getElementById("formStatus");
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    status.textContent = "Envoi du message...";
+    status.className = "form-status loading";
+
+    const data = new FormData(form);
+    const response = await fetch(form.action, {
+      method: form.method,
+      body: data,
+      headers: { 'Accept': 'application/json' }
+    });
+
+    if (response.ok) {
+      status.textContent = "✅ Message envoyé avec succès.";
+      status.className = "form-status success";
+      form.reset();
+    } else {
+      status.textContent = "❌ Erreur lors de l’envoi. Réessaie plus tard.";
+      status.className = "form-status error";
+    }
+  });
+});
+</script>
+
+
+    <style>
+        /* --- CONTACT SECTION --- */
+.contact-section {
+    margin-top: 80px;
+    text-align: center;
+    max-width: 800px;
+    margin-inline: auto;
+    background: linear-gradient(180deg, rgba(255,255,255,0.015), transparent);
+    padding: 30px 20px 60px;
+    border-radius: 16px;
+    border: 1px solid rgba(255,255,255,0.03);
+    box-shadow: 0 10px 40px rgba(0,240,255,0.05);
+}
+
+.contact-section h2 {
+    color: var(--accent);
+    font-family: "Fira Code", monospace;
+    margin-bottom: 12px;
+}
+
+.contact-intro {
+    color: var(--muted);
+    font-size: 0.95rem;
+    margin-bottom: 30px;
+    line-height: 1.5;
+}
+
+/* --- FORM --- */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    text-align: left;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+label {
+    font-size: 0.9rem;
+    color: var(--accent-2);
+    font-family: "Fira Code", monospace;
+}
+
+input, textarea {
+    padding: 10px 14px;
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(255,255,255,0.05);
+    border-radius: 8px;
+    color: var(--text);
+    font-family: "Fira Code", monospace;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 12px rgba(0,240,255,0.2);
+}
+
+/* --- Contact links --- */
+.contact-links {
+    margin-top: 40px;
+    text-align: left;
+}
+
+.contact-links h3 {
+    color: var(--accent-2);
+    font-family: "Fira Code", monospace;
+    margin-bottom: 12px;
+}
+
+.contact-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.95rem;
+}
+
+.contact-links a {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+.contact-links a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+    .contact-section {
+        padding: 20px 15px;
+    }
+}
+
+    </style>
+</body>
+</html>

@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.fixed.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bitcount+Grid+Single:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <title>NoWa | About Me</title>
+</head>
+<body>
+    <canvas id="bg-canvas" aria-hidden="true"></canvas>
+    <script src="js/scripts.js"></script>
+    <header>
+        <nav>
+            <ul class="nav-links">
+                <div class="div-chainte">
+                    <li class="li-chiant">NoWa | PortFolio</li>
+                </div>
+                <li><a href="index.html">Acceuil</a></li>
+                <li><a href="about.html">À propos</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- HERO -->
+        <section class="hero">
+            <h1>À propos de moi_</h1>
+            <p id="about-subtitle"></p>
+            <!-- <a href="#skills" class="btn-cta">Mes compétences</a> -->
+        </section>
+
+        <!-- INTRO / BIO -->
+        <section class="intro">
+            <h2>Qui suis-je ?</h2>
+            <p>Je suis <strong>NoWa</strong>, pentester passionné spécialisé dans les vulnérabilités web, l’exploitation et l’escalade de privilèges. J’adore comprendre comment fonctionnent les systèmes, découvrir leurs failles et les sécuriser. Mon objectif est de créer des environnements plus sûrs tout en explorant les limites de la cybersécurité.</p>
+        </section>
+
+        <!-- COMPÉTENCES -->
+        <section class="skills" id="skills">
+            <h2>Mes compétences en Cybersécurité</h2>
+            <div class="skills-grid">
+                <div class="skill">
+                    <h3>Web Pentesting</h3>
+                    <div class="skill-bar"><div style="width:80%"></div></div>
+                </div>
+                <div class="skill">
+                    <h3>Exploitation & CTF</h3>
+                    <div class="skill-bar"><div style="width:65%"></div></div>
+                </div>
+                <div class="skill">
+                    <h3>Escalade de privilèges</h3>
+                    <div class="skill-bar"><div style="width:70%"></div></div>
+                </div>
+                <div class="skill">
+                    <h3>Script & Automatisation</h3>
+                    <div class="skill-bar"><div style="width:85%"></div></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="skills" id="skills-system">
+            <h2>Mes compétences en Système et Réseau</h2>
+            <div class="skills-grid">
+                <div class="skill">
+                    <h3>Administration Windows & Linux</h3>
+                    <div class="skill-bar"><div style="width:85%"></div></div>
+                </div>
+                <div class="skill">
+                    <h3>Active Directory / GPO / LAPS</h3>
+                    <div class="skill-bar"><div style="width:80%"></div></div>
+                </div>
+                <div class="skill">
+                    <h3>Gestion de parc informatique (GLPI, WAPT)</h3>
+                    <div class="skill-bar"><div style="width:75%"></div></div>
+                </div>
+                <div class="skill">
+                    <h3>Réseau : VLAN, DHCP, DNS, VPN, Firewall</h3>
+                    <div class="skill-bar"><div style="width:70%"></div></div>
+                </div>
+                <div class="skill">
+                    <h3>PowerShell & Bash scripting</h3>
+                    <div class="skill-bar"><div style="width:80%"></div></div>
+                </div>
+                <div class="skill">
+                    <h3>Surveillance & Sécurité (Wireshark, Nmap, Snort)</h3>
+                    <div class="skill-bar"><div style="width:75%"></div></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="skills" id="skills-dev">
+            <h2>Mes compétences en Développement Web & Applications</h2>
+            <div class="skills-grid">
+                <div class="skill">
+                    <h3>Python (Flask, FastAPI, automation, scripts)</h3>
+                    <div class="skill-bar"><div style="width:90%"></div></div>
+                </div>
+                <div class="skill">
+                    <h3>JavaScript / Node.js</h3>
+                    <div class="skill-bar"><div style="width:75%"></div></div>
+                </div>
+                <div class="skill">
+                    <h3>HTML / CSS / Tailwind</h3>
+                    <div class="skill-bar"><div style="width:85%"></div></div>
+                </div>
+                <div class="skill">
+                    <h3>PostgreSQL / MySQL</h3>
+                    <div class="skill-bar"><div style="width:70%"></div></div>
+                </div>
+                <div class="skill">
+                    <h3>API REST & intégrations</h3>
+                    <div class="skill-bar"><div style="width:80%"></div></div>
+                </div>
+                <div class="skill">
+                    <h3>Développement orienté Cybersécurité (outils d’audit / pentest)</h3>
+                    <div class="skill-bar"><div style="width:85%"></div></div>
+                </div>
+                <div class="skill">
+                    <h3>Angular</h3>
+                    <div class="skill-bar"><div style="width:65%"></div></div>
+                </div>
+                <div class="skill">
+                    <h3>Java (Maven)</h3>
+                    <div class="skill-bar"><div style="width:50%"></div></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="skills" id="skills-devops">
+            <h2>Mes compétences en DevOps & Cybersécurité</h2>
+            <div class="skills-grid">
+                <div class="skill">
+                    <h3>Docker / Containers</h3>
+                    <div class="skill-bar"><div style="width:80%"></div></div>
+                </div>
+                <div class="skill">
+                    <h3>CI/CD (GitHub Actions, GitLab CI)</h3>
+                    <div class="skill-bar"><div style="width:75%"></div></div>
+                </div>
+                <div class="skill">
+                    <h3>Monitoring (Grafana, Prometheus)</h3>
+                    <div class="skill-bar"><div style="width:65%"></div></div>
+                </div>
+                <div class="skill">
+                    <h3>Audit de sécurité & Pentesting (Nmap, Burp, Metasploit, ADRecon…)</h3>
+                    <div class="skill-bar"><div style="width:90%"></div></div>
+                </div>
+                <div class="skill">
+                    <h3>Reverse Engineering / Exploitation</h3>
+                    <div class="skill-bar"><div style="width:70%"></div></div>
+                </div>
+                <div class="skill">
+                    <h3>Gestion de la conformité & durcissement (CIS, ANSSI, RGPD)</h3>
+                    <div class="skill-bar"><div style="width:65%"></div></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJETS -->
+        <section class="featured-projects">
+            <h2>Mes Projets</h2>
+            <div class="projects-grid">
+                <div class="project" data-hover="true">
+                    <h3>P3nUrM0M</h3>
+                    <hr>
+                    <p>Un scanner de sécurité basé sur Nmap avec détection automatique des vulnérabilités, des CVEs, et des scores CVSS via l'API Vulners. Il permet de scanner une IP unique ou un réseau entier (CIDR), tout en affichant l'IP en cours de scan pour suivre la progression.</p>
+                    <hr>
+                    <a href="https://github.com/NoWa-FTN/P3nUrM0M" target="_blank">Voir plus</a>
+                </div>
+                <div class="project" data-hover="true">
+                    <h3>T-QI</h3>
+                    <hr>
+                    <p>T-QI est un outil puissant pour mener des investigations sur des utilisateurs, des emails, des IPs, des numéros de téléphone et plus encore. Ce script Python permet de collecter des informations via différentes sources, notamment les réseaux sociaux, les archives web, les résultats d'articles de presse, les scans Shodan, le Dark Web, et bien d'autres.</p>
+                    <hr>
+                    <a href="https://github.com/NoWa-FTN/T-QI" target="_blank">Voir plus</a>
+                </div>
+                <div class="project" data-hover="true">
+                    <h3>WinAuditScanner</h3>
+                    <hr>
+                    <p>Script d'audit de sécurité pour les machines Windows Objectif: Collecter rapidement des informations utiles pour un audit local (reconnaissance, post-exploitation, légères analyses forensiques).</p>
+                    <hr>
+                    <a href="https://github.com/NoWa-FTN/WinAuditScanner" target="_blank">Voir plus</a>
+                </div>
+                <div class="project" data-hover="true">
+                    <h3>Ethical-Phishing</h3>
+                    <hr>
+                    <p>Projets en python pour simplement faire du phishing et collecter les résultats des cliques.</p>
+                    <hr>
+                    <h3 style="color: rgb(194, 44, 44);">ATTENTION ACCES INTERDIT</h3>
+                </div>
+                <div class="project" data-hover="true">
+                    <h3>Console LAPS</h3>
+                    <hr>
+                    <p>Projets en python avec Flask pour administrer les mots de passes LAPS temporaires.</p>
+                    <hr>
+                    <h3 style="color: rgb(194, 44, 44);">ATTENTION ACCES INTERDIT</h3>
+                </div>
+            </div>
+        </section>
+
+        <!-- EXPERIENCES RÉCENTES -->
+        <section class="timeline-section">
+            <h2>Expériences</h2>
+            <div class="timeline">
+                <div class="timeline-item" data-hover="true">
+                    <div class="timeline-date">Juillet 2024 - Présent</div>
+                    <div class="timeline-content">
+                        <h3>Alternant Cybersécurité - Woit-Group</h3>
+                        <p>Analyse des vulnérabilités et implémentation de mesures de sécurité pour protéger les systèmes d'information. Création d'outils d'audit (AD, système, réseau) pour garantir la sécurité de l'entreprise.</p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-hover="true">
+                    <div class="timeline-date">Septembre 2023 - Juin 2024</div>
+                    <div class="timeline-content">
+                        <h3>Alternant Développeur - Woit-Group</h3>
+                        <p>Développement web et d'application pour subvenir aux besoins de l'entreprise. Gestion de BDD postgreSQL et son exploitation avec POWER BI.</p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-hover="true">
+                    <div class="timeline-date">Mai 2023 - Juin 2023</div>
+                    <div class="timeline-content">
+                        <h3>Stage en Développement - Woit-Group</h3>
+                        <p>Découverte de l'environnement d'entreprise. Développement WEB pour subvenir aux besoins de l'entreprise.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PARCOURS -->
+        <section class="timeline-section">
+            <h2>Parcours</h2>
+            <div class="timeline">
+                <div class="timeline-item" data-hover="true">
+                    <div class="timeline-date">Septembre 2025 - Présent</div>
+                    <div class="timeline-content">
+                        <h3>Mastère Management de la Cybersécurité - EFFICOM</h3>
+                        <p>Formation avancée sur la gestion de la cybersécurité en entreprise : audit de sécurité, gestion des risques, mise en place de politiques de sécurité et coordination des équipes de sécurité. Développement de compétences en pentesting et stratégie de défense globale.</p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-hover="true">
+                    <div class="timeline-date">Septembre 2024 - Septembre 2025</div>
+                    <div class="timeline-content">
+                        <h3>Bachelor Cybersécurité - EFFICOM</h3>
+                        <p>Approfondissement des connaissances en sécurité réseau, analyse de vulnérabilités, cryptographie et exploitation de systèmes. Participation à des projets pratiques et compétitions CTF pour appliquer les concepts théoriques en conditions réelles.</p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-hover="true">
+                    <div class="timeline-date">Septembre 2022 - Juillet 2024</div>
+                    <div class="timeline-content">
+                        <h3>BTS SIO Option SISR - Lycée Gaston Berger</h3>
+                        <p>Acquisition des bases techniques en administration réseau et systèmes, maintenance et sécurité. Mise en place de projets de déploiement de serveurs et gestion de réseaux internes pour des cas d’étude pratiques.</p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-hover="true">
+                    <div class="timeline-date">Septembre 2021 - Juillet 2022</div>
+                    <div class="timeline-content">
+                        <h3>BAC SI2D Option SIN - Lycée César Baggio</h3>
+                        <p>Découverte des sciences de l’ingénieur et des systèmes numériques. Introduction à la programmation, conception de systèmes électroniques et bases de l’algorithmique. Formation pratique sur des mini-projets techniques pour consolider les connaissances.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Loisirs -->
+        <section class="featured-projects">
+            <h2>Loisirs</h2>
+            <div class="projects-grid">
+                <div class="project" data-hover="true">
+                    <h3>Musique</h3>
+                    <hr>
+                    <p>Je pratique de la guitare et de la basse depuis l'âge de 15 ans. J'ai aussi un groupe de Hard-Rock/Stoner où je suis bassiste.</p>
+                </div>
+                <div class="project" data-hover="true">
+                    <h3>Skate</h3>
+                    <hr>
+                    <p>Je fais du skate en street et en park depuis l'âge de 17 ans</p>
+                </div>
+                <div class="project" data-hover="true">
+                    <h3>Cybersécurité</h3>
+                    <hr>
+                    <p>Je suis passionné par les exploits, la logique des pentester et aussi par les failles de sécurité dans certains système qui montre que le risque 0 n'existe pas.</p>
+                </div>
+                <div class="project" data-hover="true">
+                    <h3>Programmation</h3>
+                    <hr>
+                    <p>Je fais de la programmation de site web et d'applications depuis l'âge de 14 ans.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Noa Fontaine. Tous droits réservés.</p>
+    </footer>
+</body>
+</html>

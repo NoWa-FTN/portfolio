@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.fixed.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bitcount+Grid+Single:wght@100..900&display=swap" rel="stylesheet">
+    <title>NoWa | Home</title>
+</head>
+<body>
+    <canvas id="bg-canvas" aria-hidden="true"></canvas>
+    <script src="js/scripts.js"></script>
+
+    <header>
+        <nav>
+            <ul class="nav-links">
+                <div class="div-chainte">
+                    <li class="li-chiant">NoWa | PortFolio</li>
+                </div>
+                <li><a href="index.html" class="active">Accueil</a></li>
+                <li><a href="about.html">À propos</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- HERO -->
+        <section class="hero">
+            <h1 class="glitch" data-text="Bienvenue dans mon univers_">Bienvenue dans mon univers_</h1>
+            <p id="hero-subtitle"></p>
+            <a href="#projects" class="btn-cta">Explorer mes projets</a>
+        </section>
+
+        <!-- INTRO -->
+        <section class="intro">
+            <h2>Qui suis-je ?</h2>
+            <p>Je suis <strong>NoWa</strong>, pentesteur et auditeur cybersécurité.  
+            Passionné par la sécurité offensive, j’analyse, j’exploite et je sécurise les systèmes d’information.  
+            Mon objectif : comprendre comment un attaquant pense, pour mieux défendre.</p>
+        </section>
+
+        <!-- PROJETS -->
+        <section class="featured-projects" id="projects">
+            <h2>Mes projets récents</h2>
+            <div class="projects-grid">
+                <div class="project" data-hover="true">
+                    <h3>T-QI</h3>
+                    <hr>
+                    <p><strong>T-QI</strong> est un outil d’OSINT avancé développé en Python.  
+                    Il permet de collecter et corréler des informations sur des cibles (IPs, mails, utilisateurs, etc.)  
+                    via de multiples sources — Web, Shodan, archives, réseaux sociaux et Dark Web.</p>
+                    <hr>
+                    <a href="https://github.com/NoWa-FTN/T-QI" target="_blank" class="btn-link">Voir sur GitHub</a>
+                </div>
+
+                <div class="project" data-hover="true">
+                    <h3>Ethical-Phishing</h3>
+                    <hr>
+                    <p>Outil Python destiné à la sensibilisation à la cybersécurité.  
+                    Il simule des campagnes de phishing internes pour analyser le comportement des utilisateurs et renforcer leur vigilance.</p>
+                    <hr>
+                    <span class="restricted">Accès restreint</span>
+                </div>
+
+                <div class="project" data-hover="true">
+                    <h3>Console LAPS</h3>
+                    <hr>
+                    <p>Application web Flask permettant de gérer et d’auditer les mots de passe temporaires générés par LAPS (Local Administrator Password Solution) dans un environnement Active Directory.</p>
+                    <hr>
+                    <span class="restricted">Accès restreint</span>
+                </div>
+            </div>
+            <a href="about.html" class="btn-cta">Découvrir mon parcours</a>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Noa Fontaine. Tous droits réservés.</p>
+    </footer>
+
+    <!-- Typing + Glitch JS -->
+    <script>
+        // Typing effect for hero subtitle
+        const text = "Pentester • Cybersecurity Enthusiast • Offensive Mindset";
+        let i = 0;
+        const speed = 60;
+        const subtitle = document.getElementById("hero-subtitle");
+
+        function typeEffect() {
+            if (i < text.length) {
+                subtitle.innerHTML += text.charAt(i);
+                i++;
+                setTimeout(typeEffect, speed);
+            }
+        }
+        document.addEventListener("DOMContentLoaded", typeEffect);
+    </script>
+
+    <style>
+        /* --- HERO --- */
+.hero {
+    text-align:center;
+    margin-top:20vh;
+    color:var(--accent);
+    font-family:"Bitcount Grid Single", monospace;
+}
+
+.hero h1 {
+    font-size:2.5rem;
+    margin-bottom:20px;
+    position:relative;
+}
+
+/* Glitch effect */
+.glitch::before, .glitch::after {
+    content: attr(data-text);
+    position:absolute;
+    left:0;
+    width:100%;
+    overflow:hidden;
+    clip: rect(0,900px,0,0);
+}
+.glitch::before {
+    animation: glitchTop 1.5s infinite linear alternate-reverse;
+    color: var(--accent);
+}
+.glitch::after {
+    animation: glitchBot 1.5s infinite linear alternate-reverse;
+    color: var(--accent-2);
+}
+@keyframes glitchTop {
+    0% { clip: rect(0,9999px,0,0); }
+    50% { clip: rect(0,9999px,80px,0); transform: translate(-2px,-2px); }
+    100% { clip: rect(0,9999px,0,0); }
+}
+@keyframes glitchBot {
+    0% { clip: rect(0,9999px,0,0); }
+    50% { clip: rect(20px,9999px,9999px,0); transform: translate(2px,2px); }
+    100% { clip: rect(0,9999px,0,0); }
+}
+
+#hero-subtitle {
+    color: var(--accent-2);
+    font-family:"Fira Code", monospace;
+    font-size:1rem;
+    margin-bottom:30px;
+    letter-spacing:0.05em;
+    min-height:1.2em;
+}
+
+/* --- Buttons --- */
+.btn-cta, .btn-link {
+    display:inline-block;
+    margin-top:10px;
+    padding:10px 22px;
+    border:1px solid var(--accent);
+    border-radius:8px;
+    color:var(--accent);
+    text-decoration:none;
+    font-family:"Fira Code", monospace;
+    transition: all 0.2s ease;
+}
+.btn-cta:hover, .btn-link:hover {
+    background:var(--accent);
+    color:#000;
+    box-shadow:0 0 20px var(--accent);
+}
+
+/* --- Projects --- */
+.featured-projects {
+    margin-top:80px;
+    padding:20px;
+    text-align:center;
+}
+.projects-grid {
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));
+    gap:24px;
+    margin-top:20px;
+}
+.project {
+    padding:18px;
+    border:1px solid rgba(255,255,255,0.08);
+    border-radius:12px;
+    background:rgba(255,255,255,0.02);
+    transition: all 0.3s ease;
+}
+.project:hover {
+    transform:translateY(-6px);
+    box-shadow:0 0 20px rgba(0,240,255,0.15);
+}
+.project h3 {
+    color:var(--accent);
+    font-size:1.2rem;
+    margin-bottom:10px;
+}
+.project p {
+    color:var(--muted);
+    font-size:0.95rem;
+    line-height:1.5;
+}
+.restricted {
+    color:#f44242;
+    font-weight:bold;
+}
+
+/* --- Intro --- */
+.intro {
+    margin-top:60px;
+    padding:20px;
+    max-width:800px;
+    margin-inline:auto;
+    text-align:center;
+    color:var(--muted);
+    line-height:1.6;
+}
+
+    </style>
+</body>
+</html>
